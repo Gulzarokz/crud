@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import connectDB from './config/database.js';
 import userRoutes from './routes/route.user.js';
-import todoRoutes from './routes/route.todo.js';
+import todooutes from './routes/route.todo.js';
 dotenv.config();
 const app = express();
 connectDB();

@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import connectDB from './config/database.js';
 import userRoutes from './routes/route.user.js';
 import todoRoutes from './routes/route.todo.js';
+
 dotenv.config();
 const app = express();
 connectDB();
@@ -18,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.use('/api/v1/user', userRoutes);
-app.use('/api/v1/todos', todoRoutes);
+app.use('/api/v1/todo', todoRoutes);
 
 
 app.listen(PORT, () => {
