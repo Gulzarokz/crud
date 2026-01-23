@@ -44,9 +44,9 @@ export const updateTodo = async (req, res) => {
     try {
         // const todoId = req.params.id;
         const { id } = req.params;
-        const { title , description } = req.body;
+        const { title } = req.body;
 
-        const todo = await Todo.findByIdAndUpdate(id, { title, description,  }, { new: true });
+        const todo = await Todo.findByIdAndUpdate(id, { title }, { new: true });
         todo.save();
 
         return res.status(200).json({
@@ -60,16 +60,4 @@ export const updateTodo = async (req, res) => {
     }
 }
 
-export const deleteTodo = async (req, res) => {
-    try {
-        const { id } = req.params;
-        await Todo.findByIdAndDelete(id);
 
-        return res.status(200).json({
-            success: true,
-            message: "Todo deleted successfully"
-        });
-    } catch (error) {
-        console.log(error);
-    }
-}
